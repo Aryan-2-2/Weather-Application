@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+
+var arr = []
+    var slideimage= "https://s3.amazonaws.com/prod-media.gameinformer.com/styles/full/s3/2018/11/11/15807c06/ronald-mcdonaldgodwhy.jpg"
+    var slideimage1= "https://www.thestreet.com/.image/t_share/MTY4NjM2NzIyOTU4MDUxMjIz/can-tv-commercial-icon-ronald-mcdonald-save-the-golden-arches.jpg";
+    var slideimage2= "https://th.bing.com/th/id/R.e1523ac7e125d8568a020adbe55a7668?rik=uGk0TAD7V%2bYkGQ&riu=http%3a%2f%2fstatic.businessinsider.com%2fimage%2f538ca0aaeab8eadc39926f12%2fimage.jpg&ehk=V7qX1JhZomPzU8KzHF9TExSf2Ha%2fA1iDMijWs5Hj8GE%3d&risl=&pid=ImgRaw&r=0";
+
+arr.push(slideimage,slideimage1,slideimage2)
+
+localStorage.setItem("data",JSON.stringify(arr))
+var data1 = JSON.parse(localStorage.getItem("data"))
+
+    let i = 0;
+    let img1 = document.createElement("img")
+
+    setInterval(function(){
+      
+            if(i===data1.length){
+                i = 0
+            }
+            img1.src = data1[i]
+            document.querySelector("#container").append(img1)
+            i++
+        
+    },1000)
+
+
+
+
+</script>
+
